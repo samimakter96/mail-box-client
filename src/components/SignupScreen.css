@@ -1,0 +1,13 @@
+.login-form {
+  margin: 16rem auto;
+  width: 95%;
+  max-width: 25rem;
+  border-radius: 6px;
+  border-color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.control {
+  margin: 1rem 0;
+}
