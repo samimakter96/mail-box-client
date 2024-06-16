@@ -1,26 +1,30 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { logout } from "../store/authSlice";
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { logout } from '../store/authSlice';
 
 const Welcome = () => {
-
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const logoutHandler = () => {
-    dispatch(logout())
-    navigate('/login')
-  }
+    dispatch(logout());
+    navigate('/login');
+  };
 
   return (
-    <div className="d-flex justify-content-between align-items-center border-bottom border-secondary p-3">
-      <div className="d-flex align-items-center">
-        <p className="fw-bold fst-italic fs-3 mb-0">
-          Welcome to your mail box!!!
-        </p>
+    <div className="d-flex flex-column align-items-center">
+      <div className="d-flex justify-content-between align-items-center border-bottom border-secondary p-3 w-100">
+        <div className="d-flex align-items-center">
+          <p className="fw-bold fst-italic fs-3 mb-0">
+            Welcome to your mail box!!!
+          </p>
+        </div>
+        <button className="btn btn-outline-primary" onClick={logoutHandler}>Logout</button>
       </div>
-      <button className="btn btn-outline-primary" onClick={logoutHandler}>Logout</button>
+      <div className="mt-4">
+        <Link to="/compose" className="btn btn-primary mb-2">Compose Email</Link>
+    
+      </div>
     </div>
   );
 };

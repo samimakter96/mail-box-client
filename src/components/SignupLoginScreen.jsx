@@ -61,7 +61,7 @@ const SignupLoginScreen = () => {
       }
 
       const data = await response.json();
-      dispatch(login(data.idToken));
+      dispatch(login({ token: data.idToken, email: enteredEmail }));      
       setIsLoading(false);
       console.log("user Signed Up Successfully");
 
