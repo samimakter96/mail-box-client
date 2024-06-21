@@ -1,6 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { logout } from '../store/authSlice';
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../store/authSlice";
 
 const Welcome = () => {
   const dispatch = useDispatch();
@@ -8,7 +8,7 @@ const Welcome = () => {
 
   const logoutHandler = () => {
     dispatch(logout());
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
@@ -19,11 +19,17 @@ const Welcome = () => {
             Welcome to your mail box!!!
           </p>
         </div>
-        <button className="btn btn-outline-primary" onClick={logoutHandler}>Logout</button>
+        <button className="btn btn-outline-primary" onClick={logoutHandler}>
+          Logout
+        </button>
       </div>
       <div className="mt-4">
-        <Link to="/compose" className="btn btn-primary mb-2">Compose Email</Link>
-    
+        <Link to="/compose" className="btn btn-primary mb-2">
+          Compose Email
+        </Link>
+        <Link to="/inbox" className="btn btn-secondary mb-2 ms-2">
+          View Inbox
+        </Link>
       </div>
     </div>
   );
